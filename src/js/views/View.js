@@ -2,6 +2,7 @@ import icons from 'url:../../img/icons.svg';
 
 export default class View {
   _data;
+
   renderSpinner() {
     const markup = `
       <div class="spinner">

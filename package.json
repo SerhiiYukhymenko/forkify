@@ -2,10 +2,10 @@
   "name": "forkify",
   "version": "1.0.0",
   "description": "",
-  "main": "controller.js",
+  "default": "controller.js",
   "scripts": {
     "start": "parcel index.html",
-    "build": "parcel build index.html"
+    "build": "parcel build index.html --dist-dir ./dist"
   },
   "keywords": [],
   "author": "",

@@ -30,7 +30,7 @@ async function controlRecipes() {
     resultsView.update(model.getSearchResultsPage());
 
     //Bookmarks
-    bookmarksView.update(model.state.bookmark);
+    bookmarksView.update(model.state.bookmarks);
 
     //Loading recipe
     await model.loadRecipe(id);
@@ -81,11 +81,11 @@ const controlAddBookmarks = function () {
   }
   recipeView.update(model.state.recipe);
 
-  bookmarksView.render(model.state.bookmark);
+  bookmarksView.render(model.state.bookmarks);
 };
 
 const controlBookmarks = function () {
-  bookmarksView.render(model.state.bookmark);
+  bookmarksView.render(model.state.bookmarks);
 };
 
 const controlAddRecipe = async function (newRecipe) {
@@ -96,6 +96,10 @@ const controlAddRecipe = async function (newRecipe) {
     recipeView.render(model.state.recipe);
 
     addRecipeView.renderMessage();
+
+    bookmarksView.render(model.state.bookmarks);
+
+    window.history.pushState(null, '', `#${model.state.recipe.id}`);
 
     setTimeout(() => {
       addRecipeView.toggleWindow();
